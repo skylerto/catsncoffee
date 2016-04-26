@@ -1,0 +1,10 @@
+.product {
+  padding: 1em;
+  width: 250px;
+  height: 450px;
+}
+
+.product > img {
+  width: 200px;
+  height: 250px;
+}

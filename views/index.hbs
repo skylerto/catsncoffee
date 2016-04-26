@@ -1,0 +1,13 @@
+<div class="row">
+  <h1>{{ pagename }}</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul>
+      {{#items}}
+        <li><a href="posts/{{_id}}">{{title}}</a></li>
+      {{/items}}
+    </ul>
+  </div>
+</div>
