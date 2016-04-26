@@ -2,7 +2,7 @@ catsncoffee
 ==============
 
 Cats and Coffee is a small shop that I built to test out an api wrapper for
-nodejs: [christophergregory/shopify-node-api](https://github.com/christophergregory/shopify-node-api).
+Shopify: [christophergregory/shopify-node-api](https://github.com/christophergregory/shopify-node-api).
 
 ## Usage
 
