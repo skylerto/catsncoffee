@@ -20,5 +20,8 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "dependencies": {
+    "shopify-node-api": "1.6.3"
   }
 }
