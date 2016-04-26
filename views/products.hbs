@@ -4,15 +4,17 @@
 
 <div class="row products">
   {{#products}}
-    <div class="col-md-3 product">
-      <img src={{image.src}}/>
-      <h3>{{title}}</h3>
-      <div class="price">
-        <!-- Only a Single Variant -->
-        {{#variants}}
-          ${{ price }}
-        {{/variants}}
+    <a href=""> 
+      <div class="col-md-3 product">
+        <img src={{image.src}}/>
+        <h3>{{title}}</h3>
+        <div class="price">
+          <!-- Only a Single Variant -->
+          {{#variants}}
+            ${{ price }}
+          {{/variants}}
+        </div>
       </div>
-    </div>
+    </a>
   {{/products}}
 </div>

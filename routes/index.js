@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Shopify = require('../src/shop');
 
+var products = {};
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     const items = '';
@@ -17,10 +19,11 @@ router.get('/', function (req, res, next) {
 router.get('/products', function (req, res, next) {
   Shopify.get('/admin/products.json', function(err, data, headers){
     console.log(data.products[0]);
+    products = data.products;
 
     res.render('products', {
       title: 'Cats n Coffee',
-      pagename: 'Home',
+      pagename: 'Product Catalog',
       products: data.products,
       layout: 'layouts/single'
     });
