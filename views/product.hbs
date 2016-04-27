@@ -1,0 +1,18 @@
+<div class="row">
+  <h1>{{product.title}}</h1>
+</div>
+
+<div class="row product">
+  <div class="col-md-12 product">
+    <img src={{product.image.src}}/>
+      <div class="price">
+        <!-- Only a Single Variant -->
+        {{#product.variants}}
+          ${{ price }}
+        {{/product.variants}}
+      </div>
+      <div class="decsription">
+        {{product.body_html}}
+      </div>
+    </div>
+</div>

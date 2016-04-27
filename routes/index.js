@@ -2,31 +2,43 @@ var express = require('express');
 var router = express.Router();
 var Shopify = require('../src/shop');
 
-var products = {};
+var products;
+Shopify.get('/admin/products.json', function(err, data, headers){
+    products = data.products;
+  });
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    const items = '';
     res.render('index', {
       title: 'Cats n Coffee',
       pagename: 'Home',
-      items: items,
       layout: 'layouts/single'
     });
 });
 
 
 router.get('/products', function (req, res, next) {
-  Shopify.get('/admin/products.json', function(err, data, headers){
-    console.log(data.products[0]);
-    products = data.products;
-
     res.render('products', {
       title: 'Cats n Coffee',
       pagename: 'Product Catalog',
-      products: data.products,
+      products: products,
       layout: 'layouts/single'
     });
+});
+
+router.get('/products/:id', (req, res) => {
+  var id = req.param('id');
+  console.log(id);
+  var product = products.filter((prod) => {
+    return prod.id == id;
+  })[0];
+  console.log('PRODUCT');
+  console.log(product);
+  res.render('product', {
+    title: 'Cats n Coffee',
+    pagename: 'Product Catalog',
+    product: product,
+    layout: 'layouts/single'
   });
 });
 
