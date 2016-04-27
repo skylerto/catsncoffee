@@ -22,12 +22,24 @@ app.use(express.static(path.join(__dirname, '/public')));
 /**/
 app.use(bodyParser());
 
+/**
+ * Setup Routes
+ */
+// Index router.
+const index = require('./routes/index');
+app.use(index);
 
-// routes
-app.use('/', require('./routes/index'));
+// Products router.
+const products = require('./routes/products');
+app.use(products);
+
 
 
 //const server = require('./src/server')(app);
-app.listen(3030, () => {
+const server = app.listen(3030, () => {
   console.log('app listening on port 3000');
 });
+
+module.exports = server;
+
+
